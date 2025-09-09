@@ -1,0 +1,12 @@
+{
+  "name": "container-web-test",
+  "private": true,
+  "version": "0.0.5",
+  "description": "Demo app for web container demonstrations",
+  "main": "app.js",
+  "author": "Nigel Poulton <nigelpoulton@hotmail.com> (https://nigelpoulton.com)",
+  "dependencies": {
+    "express": "5.1.0",
+    "pug": "3.0.3"
+  }
+}
