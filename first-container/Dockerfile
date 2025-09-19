@@ -1,19 +1,20 @@
-# Test web-app to use with Pluralsight courses and Docker Deep Dive book
-FROM alpine
+# Very simple Dockerfile for demo purposes
 
-LABEL maintainer="nigelpoulton@hotmail.com"
+FROM node:current-alpine
 
-# Install Node and NPM
-RUN apk add --update nodejs npm curl
+LABEL org.opencontainers.image.authors="@nigelpoulton"
 
-# Copy app to /src
-COPY . /src
+# Create directory in container image for app code
+RUN mkdir -p /usr/src/app
 
-WORKDIR /src
+# Copy app code (.) to /usr/src/app in container image
+COPY . /usr/src/app
 
-# Install dependencies
-RUN  npm install
+# Set working directory context
+WORKDIR /usr/src/app
 
-EXPOSE 8080
+# Install dependencies from packages.json
+RUN npm install
 
-ENTRYPOINT ["node", "./app.js"]
+# Command for container to execute
+ENTRYPOINT [ "node", "app.js" ]
