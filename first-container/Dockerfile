@@ -1,5 +1,3 @@
-# Very simple Dockerfile for demo purposes
-
 FROM node:current-alpine
 
 LABEL org.opencontainers.image.authors="@nigelpoulton"
